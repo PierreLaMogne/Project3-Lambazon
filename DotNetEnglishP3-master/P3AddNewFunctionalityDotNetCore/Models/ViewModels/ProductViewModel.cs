@@ -23,7 +23,7 @@ namespace P3AddNewFunctionalityDotNetCore.Models.ViewModels
         public string Stock { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(ProductService), ErrorMessageResourceName = "MissingPrice")]
-        [RegularExpression(@"^\s*-?\d+([.,]\d+)?\s*$", ErrorMessageResourceType = typeof(ProductService), ErrorMessageResourceName = "PriceNotANumber")]
+        [RegularExpression(@"^\s*-?\d+([.]\d+)?\s*$", ErrorMessageResourceType = typeof(ProductService), ErrorMessageResourceName = "PriceNotANumber")]
         [Range(0.01, double.MaxValue, ErrorMessageResourceType = typeof(ProductService), ErrorMessageResourceName = "PriceNotGreaterThanZero")]
         public string Price { get; set; }
     }

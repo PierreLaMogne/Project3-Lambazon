@@ -100,7 +100,8 @@ namespace P3AddNewFunctionalityDotNetCore.Tests
             var errors = GetModelValidationErrors(model);
 
             //Assert
-            Assert.Equal(2, errors.Count);
+            Assert.Equal(3, errors.Count);
+            Assert.Contains(errors, e => e.ErrorMessage == "La valeur saisie pour le prix doit être un nombre");
             Assert.Contains(errors, e => e.ErrorMessage == "La valeur saisie pour le stock doit être un entier");
             Assert.Contains(errors, e => e.ErrorMessage == "La stock doit être supérieure à zéro");
         }
